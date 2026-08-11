@@ -1,0 +1,90 @@
+/* ==========================================================================
+   VILLA MERCED HOTEL — DESIGN TOKENS
+   Signature motif: the arched capiz window of the heritage house facade.
+   It recurs as an image frame, a section divider, and the ESTD badge shape.
+   ========================================================================== */
+
+:root {
+  /* --- Core brand palette (Villa Merced) --- */
+  --coffee-900: #3E2620;   /* deepest shade, hovers, shadows */
+  --coffee: #5C3A2E;       /* nav bar, brown feature-section backgrounds */
+  --coffee-700: #6B4A38;   /* body copy on cream backgrounds */
+  --terracotta: #A6553B;   /* accent, logo mark, links, icon fills */
+  --terracotta-light: #C17958;
+  --cream: #F3EEE3;        /* body/content section background */
+  --cream-100: #EDE6D8;    /* slightly deeper cream for card fills */
+  --ivory: #FDFBF7;        /* text/cards on brown backgrounds */
+  --brass: #C9A66B;        /* hairline dividers, capiz/brass hardware accent */
+  --line: rgba(92, 58, 46, 0.18);
+
+  /* --- Kusina Merced (restaurant) sub-brand --- */
+  --kusina-oxblood: #5E2A22;
+  --kusina-oxblood-dark: #401A15;
+  --kusina-tan: #E4D6BE;
+  --kusina-ivory: #FBF6EC;
+
+  /* --- Lavanderia de Merced (laundry) sub-brand ---
+     Deepened from the original #159FDB: white body text on the original
+     shade measured 2.99:1 (fails WCAG AA). This value holds the same sky-
+     blue identity at 4.65:1. --lavanderia-blue-deep shifted a step darker
+     to stay visually distinct from the new base. */
+  --lavanderia-blue: #0D7CAE;
+  --lavanderia-blue-deep: #0A6690;
+  --lavanderia-ink: #0B3B52;
+
+  /* --- Type --- */
+  --font-script: 'Parisienne', cursive;             /* section headings, wedding-invite script */
+  --font-serif: 'Cormorant Garamond', serif;         /* logo lockup, small caps, refined labels */
+  --font-body: 'Poppins', sans-serif;                /* nav, paragraphs, UI */
+  --font-menu: 'Fraunces', serif;                    /* Kusina Merced menu headers */
+
+  /* --- Spacing scale --- */
+  --sp-1: 0.5rem;
+  --sp-2: 1rem;
+  --sp-3: 1.5rem;
+  --sp-4: 2.5rem;
+  --sp-5: 4rem;
+  --sp-6: 6.5rem;
+
+  /* --- Radii / shape --- */
+  --radius-sm: 4px;
+  --radius-md: 10px;
+
+  /* --- Shadow --- */
+  --shadow-soft: 0 20px 45px -20px rgba(62, 38, 32, 0.35);
+  --shadow-card: 0 12px 30px -16px rgba(62, 38, 32, 0.28);
+
+  /* --- Motion --- */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-soft: cubic-bezier(0.25, 0.8, 0.4, 1);
+
+  /* --- Type scale ---------------------------------------------------------
+     One fluid scale used everywhere so headings/body text stay consistent
+     across all 9 pages instead of each page inventing its own sizes. */
+  --fs-h1: clamp(2.6rem, 4.4vw + 1rem, 4.4rem);   /* page/hero titles */
+  --fs-h2: clamp(2rem, 2.6vw + 1rem, 3rem);        /* section titles */
+  --fs-h3: clamp(1.3rem, 1vw + 1rem, 1.7rem);      /* card/subsection titles */
+  --fs-h4: clamp(1.05rem, .4vw + 1rem, 1.2rem);    /* small heads, labels */
+  --fs-body-lg: clamp(1rem, .2vw + .95rem, 1.08rem);
+  --fs-body: 0.95rem;
+  --fs-small: 0.84rem;
+  --fs-xs: 0.74rem;
+  --lh-heading: 1.08;
+  --lh-body: 1.75;
+
+  /* --- Image / media card border system ----------------------------------
+     One shared, thin, professional border + shadow language for every
+     photo, video, or placeholder panel on the site. */
+  --card-border: 1px solid rgba(62, 38, 32, 0.10);
+  --card-border-dark: 1px solid rgba(253, 251, 247, 0.16);
+  --card-shadow-rest: 0 10px 26px -16px rgba(62, 38, 32, 0.22);
+  --card-shadow-hover: 0 22px 46px -18px rgba(62, 38, 32, 0.32);
+
+  /* --- Accessibility-driven variants ---------------------------------
+     Same brand colors, tuned per background so small/UI text clears
+     WCAG AA. Original --brass (4.36:1) and star gold #D9A441 (2.18:1 on
+     ivory/cream) both failed in specific contexts — see contrast audit. */
+  --brass-onbrown: #D9BC85;      /* .eyebrow.on-dark on coffee: 5.47:1 */
+  --star-gold: #D9A441;          /* stars on coffee/dark cards: 4.45:1 */
+  --star-gold-onlight: #8A6112;  /* stars if ever placed on cream/ivory: 5.35:1+ */
+}

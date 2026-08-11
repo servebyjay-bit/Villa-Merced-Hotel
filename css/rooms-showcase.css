@@ -1,0 +1,559 @@
+/* =========================================================
+   Villa Merced — Accommodation Showcase
+   Scoped to rooms.html so the rest of the site is unaffected.
+   ========================================================= */
+
+.room-showcase-section {
+  padding-top: clamp(4rem, 7vw, 7rem);
+  padding-bottom: clamp(4.5rem, 8vw, 8rem);
+}
+
+.room-showcase-heading {
+  max-width: 760px;
+  margin: 0 auto clamp(3rem, 5vw, 5rem);
+  text-align: center;
+}
+
+.room-showcase-heading .script-heading {
+  margin-bottom: .9rem;
+}
+
+.room-showcase-intro {
+  max-width: 650px;
+  margin: 0 auto;
+  color: var(--muted, #6f625a);
+  line-height: 1.8;
+  font-size: .98rem;
+}
+
+.room-showcase {
+  display: grid;
+  gap: clamp(4rem, 8vw, 8rem);
+}
+
+.room-showcase-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(360px, .85fr);
+  min-height: 570px;
+  background: var(--ivory, #f8f2e9);
+  border: 1px solid rgba(83, 50, 35, .14);
+  border-radius: clamp(1.25rem, 2vw, 2rem);
+  overflow: hidden;
+  box-shadow: 0 20px 55px rgba(65, 40, 27, .10);
+}
+
+.room-showcase-card--reverse {
+  grid-template-columns: minmax(360px, .85fr) minmax(0, 1.15fr);
+}
+
+.room-showcase-card--reverse .room-showcase-image {
+  order: 2;
+}
+
+.room-showcase-card--reverse .room-showcase-content {
+  order: 1;
+}
+
+.room-showcase-image {
+  position: relative;
+  min-height: 570px;
+  overflow: hidden;
+  background: var(--coffee, #5b3928);
+}
+
+.room-showcase-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(38, 22, 15, .04),
+    rgba(38, 22, 15, .16)
+  );
+  pointer-events: none;
+}
+
+.room-showcase-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transition: transform .7s cubic-bezier(.2,.65,.25,1);
+}
+
+.room-showcase-card:hover .room-showcase-image img {
+  transform: scale(1.025);
+}
+
+.room-image-label {
+  position: absolute;
+  z-index: 2;
+  left: 1.25rem;
+  bottom: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: .35rem .7rem;
+  border: 1px solid rgba(255,255,255,.45);
+  border-radius: 999px;
+  background: rgba(46, 27, 19, .45);
+  color: #fff;
+  backdrop-filter: blur(10px);
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+}
+
+.room-showcase-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(2rem, 4vw, 4.25rem);
+  color: var(--coffee, #5b3928);
+}
+
+.room-showcase-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.1rem;
+}
+
+.room-kicker {
+  color: var(--terracotta, #b55d3e);
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.room-capacity {
+  padding: .4rem .7rem;
+  border: 1px solid rgba(91,57,40,.18);
+  border-radius: 999px;
+  font-size: .72rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.room-showcase-content h3 {
+  margin: 0;
+  font-family: var(--font-heading, 'Cormorant Garamond', serif);
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-weight: 500;
+  line-height: .98;
+  letter-spacing: -.02em;
+}
+
+.room-description {
+  max-width: 540px;
+  margin: 1.25rem 0 1.8rem;
+  color: var(--muted, #6f625a);
+  font-size: .96rem;
+  line-height: 1.75;
+}
+
+.room-showcase-features {
+  display: grid;
+  gap: .8rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.room-showcase-features li {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  align-items: center;
+  gap: .65rem;
+  color: var(--coffee, #5b3928);
+  font-size: .88rem;
+  line-height: 1.45;
+}
+
+.feature-icon {
+  width: 28px;
+  height: 28px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(181, 93, 62, .10);
+  color: var(--terracotta, #b55d3e);
+  font-size: .85rem;
+  font-weight: 700;
+}
+
+.room-showcase-footer {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-top: 2.25rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(91,57,40,.14);
+}
+
+.room-price {
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+}
+
+.room-price span {
+  color: var(--muted, #6f625a);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.room-price strong {
+  font-family: var(--font-heading, 'Cormorant Garamond', serif);
+  font-size: clamp(2rem, 3vw, 2.7rem);
+  font-weight: 600;
+  line-height: 1;
+  color: var(--coffee, #5b3928);
+}
+
+.room-book-btn {
+  min-width: 155px;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .room-showcase-card,
+  .room-showcase-card--reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .room-showcase-card--reverse .room-showcase-image,
+  .room-showcase-card--reverse .room-showcase-content {
+    order: initial;
+  }
+
+  .room-showcase-image {
+    min-height: clamp(300px, 58vw, 500px);
+  }
+
+  .room-showcase-content {
+    padding: clamp(1.75rem, 5vw, 3rem);
+  }
+}
+
+@media (max-width: 600px) {
+  .room-showcase-section {
+    padding-top: 3.5rem;
+    padding-bottom: 4rem;
+  }
+
+  .room-showcase-heading {
+    margin-bottom: 2.5rem;
+  }
+
+  .room-showcase-intro {
+    font-size: .9rem;
+    line-height: 1.7;
+  }
+
+  .room-showcase {
+    gap: 2.5rem;
+  }
+
+  .room-showcase-card {
+    border-radius: 1rem;
+  }
+
+  .room-showcase-image {
+    min-height: 280px;
+  }
+
+  .room-showcase-content {
+    padding: 1.5rem;
+  }
+
+  .room-showcase-topline {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: .65rem;
+  }
+
+  .room-showcase-content h3 {
+    font-size: 2.45rem;
+  }
+
+  .room-description {
+    font-size: .88rem;
+    margin: 1rem 0 1.4rem;
+  }
+
+  .room-showcase-features {
+    gap: .7rem;
+  }
+
+  .room-showcase-features li {
+    grid-template-columns: 28px 1fr;
+    font-size: .82rem;
+  }
+
+  .room-showcase-footer {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 1.75rem;
+  }
+
+  .room-price strong {
+    font-size: 2.25rem;
+  }
+
+  .room-book-btn {
+    width: 100%;
+  }
+}/* =========================================================
+   ROOM PAGE — BOOKING CTA
+   ========================================================= */
+
+.room-cta {
+  padding-top: var(--sp-5);
+  padding-bottom: var(--sp-6);
+}
+
+.room-cta-card {
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+
+  padding: clamp(2.5rem, 5vw, 4.5rem);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--coffee-900),
+      var(--coffee)
+    );
+
+  color: var(--ivory);
+
+  border-radius: var(--radius-md);
+}
+
+.room-cta-card::before {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  right: -100px;
+  top: -130px;
+
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.room-cta-card::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  right: 30px;
+  bottom: -110px;
+
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.room-cta-content {
+  position: relative;
+  z-index: 1;
+
+  max-width: 650px;
+}
+
+.room-cta-content .eyebrow {
+  margin-bottom: .7rem;
+}
+
+.room-cta-content h2 {
+  margin: 0;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: .95;
+}
+
+.room-cta-content p {
+  max-width: 580px;
+  margin: 1rem 0 0;
+  color: rgba(255,255,255,.78);
+  line-height: 1.75;
+}
+
+.room-cta-actions {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  flex-shrink: 0;
+}
+
+.room-cta-actions .btn {
+  white-space: nowrap;
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+  .room-cta {
+    padding-top: var(--sp-4);
+    padding-bottom: var(--sp-5);
+  }
+
+  .room-cta-card {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 2rem;
+
+    padding: 2.2rem 1.5rem;
+  }
+
+  .room-cta-content h2 {
+    font-size: clamp(2.2rem, 10vw, 3rem);
+  }
+
+  .room-cta-content p {
+    font-size: .95rem;
+  }
+
+  .room-cta-actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .room-cta-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+}
+/* =========================================================
+   ROOM GALLERY — 4 clickable images per room (webp-ready)
+   Main image + 3 thumbnails; thumbnails and main image all
+   open the same lightweight lightbox.
+   ========================================================= */
+
+.room-gallery { display: flex; flex-direction: column; gap: .5rem; height: 100%; }
+
+.room-gallery-main {
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+  min-height: 340px;
+  border: none;
+  padding: 0;
+  cursor: zoom-in;
+  background: var(--coffee, #5b3928);
+}
+.room-gallery-main img {
+  width: 100%; height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform .7s cubic-bezier(.2,.65,.25,1);
+}
+.room-gallery-main:hover img { transform: scale(1.03); }
+
+.room-gallery-thumbs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .5rem;
+}
+.room-gallery-thumb {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border: none;
+  padding: 0;
+  cursor: zoom-in;
+  background: var(--coffee, #5b3928);
+}
+.room-gallery-thumb img {
+  width: 100%; height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform .5s var(--ease-soft), filter .3s var(--ease);
+}
+.room-gallery-thumb:hover img { transform: scale(1.06); }
+.room-gallery-thumb:focus-visible,
+.room-gallery-main:focus-visible { outline: 2px solid var(--terracotta, #b55d3e); outline-offset: 2px; }
+
+.room-image-label {
+  z-index: 2;
+}
+
+@media (max-width: 900px) {
+  .room-gallery-main { min-height: clamp(260px, 58vw, 420px); }
+}
+
+/* ---------- Lightbox ---------- */
+.room-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-3);
+  background: rgba(20, 12, 9, 0.92);
+}
+.room-lightbox.is-open { display: flex; }
+.room-lightbox img {
+  max-width: min(92vw, 1100px);
+  max-height: 86vh;
+  width: auto; height: auto;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 30px 70px rgba(0,0,0,.5);
+}
+.room-lightbox-close {
+  position: absolute;
+  top: var(--sp-3); right: var(--sp-3);
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.35);
+  background: rgba(255,255,255,.06);
+  color: #fff;
+  font-size: 1.3rem;
+  line-height: 1;
+  display: flex; align-items: center; justify-content: center;
+}
+.room-lightbox-nav {
+  position: absolute;
+  top: 50%; transform: translateY(-50%);
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.35);
+  background: rgba(255,255,255,.06);
+  color: #fff;
+  font-size: 1.2rem;
+  display: flex; align-items: center; justify-content: center;
+}
+.room-lightbox-prev { left: var(--sp-3); }
+.room-lightbox-next { right: var(--sp-3); }
+
+@media (max-width: 600px) {
+  .room-lightbox-nav { width: 38px; height: 38px; }
+  .room-lightbox-close { top: var(--sp-2); right: var(--sp-2); }
+}

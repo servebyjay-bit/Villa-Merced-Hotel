@@ -1,0 +1,48 @@
+/* Lavanderia de Merced — laundry service. Its own bright, utilitarian
+   sky-blue identity, distinct from the heritage hotel brand, the way a
+   laundromat's signage differs from a boutique hotel's. */
+
+.lavanderia-page { background: var(--lavanderia-blue); color: #fff; }
+
+.lav-hero { padding: var(--sp-6) 0 var(--sp-5); text-align:center; }
+.lav-hero .mark { width: 60px; height: 60px; margin: 0 auto var(--sp-2); }
+.lav-hero .title-wide { font-family: var(--font-body); font-weight: 700; letter-spacing: .16em; font-size: clamp(1.9rem,5vw,3rem); text-transform: uppercase; }
+.lav-hero .script { font-family: var(--font-script); font-size: clamp(2rem,4.5vw,2.8rem); margin-top: .1rem; }
+.lav-hero .sub { font-family: var(--font-body); letter-spacing: .3em; font-size: .72rem; text-transform: uppercase; opacity: .85; margin-top: .3rem; }
+
+.lav-section { padding: var(--sp-5) 0; }
+.lav-card { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.28); border-radius: var(--radius-md); padding: var(--sp-4); backdrop-filter: blur(2px); }
+
+.rate-table { width: 100%; border-collapse: collapse; }
+.rate-table th { text-align:left; font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; opacity:.75; padding-bottom: .8rem; border-bottom: 1px solid rgba(255,255,255,.35); }
+.rate-table td { padding: .9rem 0; border-bottom: 1px solid rgba(255,255,255,.18); font-size: .95rem; }
+.rate-table td.price { text-align:right; font-family: var(--font-body); font-weight: 700; font-size: 1.1rem; letter-spacing: .02em; }
+
+.lav-info-grid { display:grid; grid-template-columns: 1fr 1fr; gap: var(--sp-4); }
+.lav-info-grid ul { display:flex; flex-direction:column; gap:.7rem; }
+.lav-info-grid li { display:flex; gap:.6rem; align-items:flex-start; font-size: .92rem; line-height:1.6; }
+.lav-info-grid li svg { width:18px; height:18px; flex-shrink:0; margin-top:.15rem; }
+
+.lav-terms { display:flex; flex-direction:column; gap:.6rem; }
+.lav-terms li { font-size: .88rem; line-height:1.7; padding-left: 1.2rem; position:relative; }
+.lav-terms li::before { content:"—"; position:absolute; left:0; opacity:.6; }
+
+@media (max-width: 760px) {
+  .lav-info-grid { grid-template-columns: 1fr; }
+  .rate-table td, .rate-table th { font-size:.85rem; }
+}
+.lav-social {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  margin-top: var(--sp-3);
+  padding: .5rem 1rem;
+  border: 1px solid rgba(255,255,255,.35);
+  border-radius: 999px;
+  color: #fff;
+  font-size: .8rem;
+  font-weight: 600;
+  transition: background .3s var(--ease), transform .3s var(--ease);
+}
+.lav-social svg { width: 17px; height: 17px; }
+.lav-social:hover { background: rgba(255,255,255,.15); transform: translateY(-1px); }

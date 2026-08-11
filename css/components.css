@@ -1,0 +1,945 @@
+/* =========================================================
+   HOMEPAGE HERO — VILLA MERCED BRAND LOCKUP
+   ========================================================= */
+
+.hero {
+    position: relative;
+    min-height: calc(100vh - 76px);
+    overflow: hidden;
+    color: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    isolation: isolate;
+}
+
+
+/* ---------------------------------------------------------
+   BACKGROUND IMAGE
+   --------------------------------------------------------- */
+
+.hero .photo-panel {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-image: url("../images/vm.webp");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    z-index: -3;
+}
+
+
+/* ---------------------------------------------------------
+   DARK IMAGE OVERLAY
+   --------------------------------------------------------- */
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(25, 15, 11, 0.18) 0%,
+            rgba(25, 15, 11, 0.20) 45%,
+            rgba(25, 15, 11, 0.48) 100%
+        );
+
+    z-index: -2;
+}
+
+
+/* ---------------------------------------------------------
+   BRAND LOCKUP
+   --------------------------------------------------------- */
+
+.hero-brand {
+    position: relative;
+    z-index: 3;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    color: #fff;
+
+    transform: translateY(-10%);
+}
+
+
+/* ---------------------------------------------------------
+   WELCOME TO
+   --------------------------------------------------------- */
+
+.hero-welcome {
+    font-family: var(--font-body);
+
+    font-size: clamp(
+        0.85rem,
+        1.25vw,
+        1.25rem
+    );
+
+    font-weight: 600;
+
+    letter-spacing: 0.48em;
+    text-transform: uppercase;
+
+    margin-bottom: -15rem;
+
+    padding-left: 0.48em;
+
+    color: #fff;
+}
+
+
+/* ---------------------------------------------------------
+   BUSINESS FRONT LOGO
+   Replaces the former ESTD badge + arch-door mark + wordmark lockup.
+   --------------------------------------------------------- */
+
+.hero-logo {
+    width: min(580px, 250vw);
+    height: auto;
+    display: block;
+    margin-top: 8rem;
+    margin-bottom: -8rem;
+}
+
+
+/* ---------------------------------------------------------
+   ESTD + ARCH LOGO + 2009 (unused — kept in case the wordmark
+   lockup is needed again; safe to delete)
+   --------------------------------------------------------- */
+
+.hero-estd {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: clamp(1.2rem, 2.4vw, 2.8rem);
+
+    color: #fff;
+
+    margin-bottom: 0.6rem;
+}
+
+.hero-estd > span {
+    font-family: var(--font-body);
+
+    font-size: clamp(
+        1rem,
+        1.5vw,
+        1.45rem
+    );
+
+    font-weight: 400;
+
+    letter-spacing: 0.20em;
+
+    white-space: nowrap;
+}
+
+
+.hero-door-logo {
+    width: clamp(
+        75px,
+        8vw,
+        115px
+    );
+
+    height: auto;
+
+    display: block;
+
+    color: #fff;
+}
+
+
+/* ---------------------------------------------------------
+   MAIN VILLA MERCED WORDMARK
+   --------------------------------------------------------- */
+
+.hero-wordmark {
+    font-family: var(--font-serif);
+
+    font-size: clamp(
+        3.4rem,
+        7vw,
+        7.4rem
+    );
+
+    font-weight: 400;
+
+    line-height: 0.95;
+
+    letter-spacing: 0.015em;
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+
+    color: #fff;
+
+    text-shadow:
+        0 2px 12px rgba(0, 0, 0, 0.18);
+}
+
+
+/* ---------------------------------------------------------
+   HOTEL
+   --------------------------------------------------------- */
+
+.hero-hotel {
+    font-family: var(--font-body);
+
+    font-size: clamp(
+        1.1rem,
+        1.7vw,
+        1.7rem
+    );
+
+    font-weight: 400;
+
+    letter-spacing: 0.42em;
+
+    text-transform: uppercase;
+
+    margin-top: 0.8rem;
+
+    padding-left: 0.42em;
+
+    color: #fff;
+}
+
+
+/* ---------------------------------------------------------
+   BUTTONS
+   --------------------------------------------------------- */
+
+.hero-actions {
+    position: absolute;
+
+    z-index: 4;
+
+    bottom: 1rem;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.8rem;
+
+    width: 100%;
+}
+
+
+.hero-actions .btn {
+    min-width: 180px;
+
+    padding: 0.9rem 1.5rem;
+
+    font-family: var(--font-body);
+
+    font-size: 0.9rem;
+
+    letter-spacing: 0.04em;
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 760px) {
+
+    .hero {
+        min-height: calc(100svh - 68px);
+    }
+
+
+    .hero-brand {
+        width: 100%;
+
+        padding: 0 1rem;
+
+        transform: translateY(-30%);
+    }
+
+
+    .hero-welcome {
+        font-size: 0.68rem;
+
+        letter-spacing: 0.34em;
+
+        margin-bottom: -10rem;
+    }
+
+
+    .hero-logo {
+        width: min(480px, 150vw);
+    }
+
+
+    .hero-estd {
+        gap: 0.8rem;
+
+        margin-bottom: -5rem;
+    }
+
+
+    .hero-estd > span {
+        font-size: 0.72rem;
+
+        letter-spacing: 0.14em;
+    }
+
+
+    .hero-door-logo {
+        width: 66px;
+    }
+
+
+    .hero-wordmark {
+        font-size: clamp(
+            2.35rem,
+            10.5vw,
+            4rem
+        );
+
+        letter-spacing: 0.01em;
+    }
+
+
+    .hero-hotel {
+        font-size: 0.78rem;
+
+        letter-spacing: 0.32em;
+
+        margin-top: 0.55rem;
+    }
+
+
+    .hero-actions {
+        bottom: 1.5rem;
+
+        padding: 0 1rem;
+
+        flex-direction: column;
+
+        gap: 0.6rem;
+    }
+
+
+    .hero-actions .btn {
+        width: min(
+            100%,
+            280px
+        );
+
+        min-width: 0;
+    }
+}
+
+.estd-badge {
+    margin-top: var(--sp-3);
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 0.6rem;
+
+    border: 1px solid rgba(253, 251, 247, 0.5);
+    border-radius: 999px;
+
+    padding: 0.5rem 1.1rem 0.5rem 0.7rem;
+
+    font-size: 0.72rem;
+    letter-spacing: 0.24em;
+}
+
+.estd-badge svg {
+    width: 20px;
+    height: 20px;
+}
+
+.estd-badge {
+  margin-top: var(--sp-3);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  border: 1px solid rgba(253,251,247,0.5);
+  border-radius: 999px;
+  padding: 0.5rem 1.1rem 0.5rem 0.7rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.24em;
+}
+.estd-badge svg { width: 20px; height: 20px; }
+
+.hero-tagline {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: var(--sp-5) var(--sp-3) var(--sp-4);
+}
+.hero-tagline p { font-size: 0.95rem; letter-spacing: 0.06em; color: var(--coffee-700); }
+
+/* ============ Value props strip ============ */
+.value-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+  align-items: start;
+  text-align: center;
+}
+.value-item { display:flex; flex-direction:column; align-items:center; gap:.6rem; }
+.value-item svg { width: 34px; height: 34px; color: var(--brass); }
+.value-item h3 { font-family: var(--font-serif); font-size: 1.3rem; letter-spacing: .04em; color: var(--ivory); }
+.value-item p { font-size: .85rem; opacity: .78; max-width: 220px; }
+
+@media (max-width: 760px) {
+  .value-strip { grid-template-columns: 1fr; gap: var(--sp-4); }
+}
+
+/* ============ History page ============ */
+.history-block {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: var(--sp-5);
+  align-items: center;
+}
+.history-block .photo-panel { aspect-ratio: 4/5; }
+.history-copy p { margin-bottom: var(--sp-2); line-height: var(--lh-body); font-size: var(--fs-body-lg); }
+.history-copy p:last-child { margin-bottom: 0; }
+.history-copy .signee { font-family: var(--font-script); font-size: 1.6rem; color: var(--terracotta); }
+
+@media (max-width: 860px) {
+  .history-block { grid-template-columns: 1fr; }
+}
+
+.banner-photo {
+  position: relative;
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--ivory);
+}
+.banner-photo .content { position: relative; z-index: 2; display:flex; flex-direction:column; gap:.4rem; }
+
+/* ============ Room cards ============ */
+.room-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-4);
+}
+.room-card {
+  background: var(--ivory);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+}
+.room-card .photo-panel { aspect-ratio: 16/10; }
+.room-card .body { padding: var(--sp-3) var(--sp-3) var(--sp-4); }
+.room-card h3 { font-family: var(--font-serif); font-size: var(--fs-h3); line-height: var(--lh-heading); color: var(--coffee); letter-spacing: .02em; }
+.room-card .rate { font-family: var(--font-body); font-weight: 600; color: var(--terracotta); font-size: var(--fs-body-lg); margin-top: .2rem; }
+.room-card .rate span { font-weight: 400; font-size: .78rem; color: var(--coffee-700); opacity: .8; }
+.room-feature-list { margin-top: var(--sp-2); display: flex; flex-direction: column; gap: .55rem; }
+.room-feature-list li { display: flex; align-items: center; gap: .6rem; font-size: .87rem; }
+.room-feature-list svg { width: 19px; height: 19px; color: var(--terracotta); flex-shrink: 0; }
+
+@media (max-width: 760px) {
+  .room-grid { grid-template-columns: 1fr; }
+}
+
+.inclusions-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-3);
+  text-align: center;
+}
+.inclusions-strip .item { display:flex; flex-direction:column; align-items:center; gap:.5rem; }
+.inclusions-strip svg { width: 30px; height: 30px; color: var(--terracotta); }
+.inclusions-strip p { font-size: .84rem; font-weight: 500; }
+
+@media (max-width: 700px) { .inclusions-strip { grid-template-columns: repeat(2,1fr); } }
+
+/* ============ Shared spaces ============
+   Real webp-ready photo cards on a full-bleed section using the brand's
+   brown (.on-brown handles the background), replacing the old
+   placeholder-card-on-cream layout. */
+.space-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+}
+.space-card { display: flex; flex-direction: column; gap: var(--sp-2); }
+.space-card-image { aspect-ratio: 4/3; }
+.space-card-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.space-card h3 { font-family: var(--font-script); font-size: 1.9rem; color: var(--ivory); }
+.space-card p { font-size: var(--fs-small); opacity: .85; line-height: var(--lh-body); }
+
+@media (max-width: 860px) { .space-grid { grid-template-columns: 1fr; } }
+
+/* ============ Nearby cards ============ */
+.nearby-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+}
+.nearby-card {
+  background: var(--ivory);
+  color: var(--coffee-700);
+  border-radius: var(--radius-md);
+  padding: var(--sp-3);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+/* Reels-style vertical video card (Things To Do). webp/mp4-ready: swap the
+   poster image and <source src> for real files, or replace the <video>
+   with an <iframe> embed and keep this wrapper for consistent sizing. */
+.activity-video {
+  aspect-ratio: 9 / 16;
+  max-width: 240px;
+  margin: 0 auto var(--sp-2);
+  background: var(--coffee-900);
+}
+.activity-video video,
+.activity-video iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border: 0;
+}
+.nearby-card .meta { display:flex; justify-content:space-between; align-items:baseline; }
+.nearby-card h3 { font-family: var(--font-serif); font-size: var(--fs-h3); line-height: var(--lh-heading); color: var(--coffee); }
+.nearby-card .dist { font-size: .74rem; color: var(--terracotta); letter-spacing: .04em; font-weight: 600; text-transform: uppercase; }
+.nearby-card p { font-size: var(--fs-small); line-height: var(--lh-body); }
+.nearby-card .addr { font-size: .78rem; opacity: .82; }
+
+@media (max-width: 860px) { .nearby-grid { grid-template-columns: 1fr; } }
+
+/* ============ Reviews ============ */
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-3);
+}
+.review-card {
+  background: rgba(253,251,247,0.06);
+  border: 1px solid rgba(253,251,247,0.14);
+  border-radius: var(--radius-md);
+  padding: var(--sp-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+.review-card svg { width: 30px; height: 24px; color: var(--brass); }
+.review-card p.quote { font-size: var(--fs-small); line-height: var(--lh-body); opacity: .92; flex: 1; }
+.review-card .who { font-family: var(--font-serif); font-size: 1.05rem; color: var(--ivory); }
+.review-card .where { font-size: .74rem; letter-spacing: .05em; text-transform: uppercase; opacity: .6; }
+
+@media (max-width: 860px) { .review-grid { grid-template-columns: 1fr; } }
+
+/* ============ FAQ accordion ============ */
+.faq-list { display: flex; flex-direction: column; gap: var(--sp-2); max-width: 780px; margin: 0 auto; }
+.faq-item {
+  background: var(--ivory);
+  color: var(--coffee-700);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+.faq-q {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-2);
+  padding: var(--sp-3);
+  background: none;
+  border: none;
+  text-align: left;
+  font-family: var(--font-serif);
+  font-size: var(--fs-h4);
+  line-height: var(--lh-heading);
+  color: var(--coffee);
+}
+.faq-q .plus { font-size: 1.4rem; color: var(--terracotta); transition: transform .3s var(--ease); flex-shrink:0; }
+.faq-item[data-open="true"] .plus { transform: rotate(45deg); }
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s var(--ease);
+  padding: 0 var(--sp-3);
+}
+.faq-a-inner { padding-bottom: var(--sp-3); font-size: var(--fs-body); line-height: var(--lh-body); }
+.faq-a-inner p { margin-bottom: .8rem; }
+.faq-a-inner p:last-child { margin-bottom: 0; }
+.faq-a-inner ul { list-style: disc; padding-left: 1.2rem; display:flex; flex-direction:column; gap:.3rem; margin-top:.4rem; }
+
+.faq-groups { display:flex; flex-direction:column; gap: var(--sp-5); }
+.faq-group-label { text-align:center; margin-bottom: var(--sp-3); }
+
+/* ============ Contact ============ */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-5);
+}
+.contact-info h4 { font-family: var(--font-serif); font-size: var(--fs-h4); color: var(--coffee); margin-bottom: .6rem; }
+.contact-info .block { margin-bottom: var(--sp-4); }
+.contact-info p, .contact-info a { font-size: var(--fs-body); line-height: var(--lh-body); }
+.contact-info a.link { color: var(--terracotta); font-weight: 500; }
+.social-row { display: flex; gap: .7rem; margin-top: .8rem; }
+.social-row a {
+  width: 40px; height: 40px; border-radius: 50%;
+  border: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--coffee);
+  transition: background .3s var(--ease), color .3s var(--ease);
+}
+.social-row a:hover { background: var(--coffee); color: var(--ivory); }
+.social-row svg { width: 18px; height: 18px; }
+
+.inquiry-form {
+  background: var(--ivory);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+.inquiry-form h4 { font-family: var(--font-serif); font-size: var(--fs-h3); line-height: var(--lh-heading); color: var(--coffee); margin-bottom: .3rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-2); }
+.field { display: flex; flex-direction: column; gap: .35rem; }
+.field label { font-size: .76rem; letter-spacing: .04em; text-transform: uppercase; font-weight: 600; color: var(--coffee-700); }
+.field input, .field select, .field textarea {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: .7rem .8rem;
+  background: var(--cream);
+  color: var(--coffee-900);
+}
+.field input:focus, .field select:focus, .field textarea:focus { border-color: var(--terracotta); outline: none; }
+.form-note { font-size: .76rem; opacity: .82; line-height: 1.6; }
+.form-status { font-size: .85rem; font-weight: 500; min-height: 1.2em; }
+.form-status.success { color: #3E7B4F; }
+.form-status.error { color: #A6553B; }
+
+/* Inquiry form submit button reads as one deliberate, full-width action —
+   easy to tap on mobile, not a shrink-wrapped pill off to one side. */
+#inquiry-form > .btn-primary {
+  width: 100%;
+  justify-content: center;
+  padding: .95rem 1.5rem;
+  gap: .6rem;
+  margin-top: .2rem;
+}
+#inquiry-form textarea { min-height: 64px; }
+#inquiry-form > .btn-primary:disabled { opacity: .65; cursor: not-allowed; }
+.inquiry-form { padding-bottom: var(--sp-3); }
+
+@media (max-width: 560px) {
+  /* Balanced, centered header instead of a left-stacked icon+title that
+     reads lopsided at narrow widths; the note paragraph stays left-aligned
+     underneath since centered multi-line text is harder to read. */
+  .inquiry-form .booking-header { flex-direction: column; align-items: center; text-align: center; }
+  .inquiry-form .booking-header > div { width: 100%; }
+  .inquiry-form .booking-header .form-note { text-align: left; }
+  /* Trim the card's own padding so form fields get more room on narrow
+     screens instead of feeling squeezed by .wrap's side padding stacked
+     on top of the card's own padding. */
+  .inquiry-form { padding: var(--sp-3); }
+  #inquiry-form > .btn-primary { padding: .9rem 1.2rem; font-size: .82rem; }
+}
+
+.map-embed { border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-card); }
+.map-embed iframe { width: 100%; height: 380px; border: 0; display:block; }
+.map-rating { display:flex; align-items:center; gap:.4rem; font-size:.82rem; margin-top:.6rem; color: var(--coffee-700); }
+.map-rating svg { width:16px; height:16px; color:#D9A441; }
+
+@media (max-width: 860px) {
+  .contact-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  /* Inquiry/reservation form is the priority action on mobile — show it
+     before the address/social/map block, regardless of source order. */
+  .contact-grid .inquiry-form { order: -1; }
+  /* Center the form as a balanced card within the page instead of a
+     full-bleed block sitting flush against .wrap's own side padding. */
+  .contact-grid .inquiry-form {
+    max-width: 480px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ============ Page hero (interior pages) ============ */
+.page-hero {
+  position: relative;
+  min-height: 46vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--ivory);
+}
+.page-hero .content { position: relative; z-index: 2; display:flex; flex-direction:column; gap:.5rem; align-items:center; padding: var(--sp-3); }
+
+/* Interior-page heroes with a real background photo (History, Nearby,
+   Reviews, FAQ, Contact). Replaces the .photo-panel gradient placeholder
+   with an actual image + the same dark overlay treatment as the homepage
+   hero, for readable on-dark type. webp-ready: point each .hero-bg-*
+   background-image at the real file — paths below are placeholders. */
+.page-hero-img {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.page-hero-img::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(25, 15, 11, 0.38) 0%,
+    rgba(25, 15, 11, 0.40) 45%,
+    rgba(25, 15, 11, 0.62) 100%
+  );
+}
+.hero-bg-history  { background-image: url("../images/hero/history.webp"); }
+.hero-bg-nearby   { background-image: url("../images/hero/nearby.webp"); }
+.hero-bg-reviews  { background-image: url("../images/hero/reviews.webp"); }
+.hero-bg-faq      { background-image: url("../images/hero/faq.webp"); }
+.hero-bg-contact  { background-image: url("../images/hero/contact.webp"); }
+/* ============ Booking widget (contact.html) ============ */
+.booking-widget {
+  background: var(--ivory);
+  border: var(--card-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  position: relative;
+}
+
+.booking-header { display: flex; align-items: flex-start; gap: var(--sp-2); }
+.booking-header h4 { font-family: var(--font-serif); font-size: var(--fs-h3); color: var(--coffee); margin-bottom: .3rem; }
+.booking-badge {
+  flex-shrink: 0;
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  background: rgba(166, 85, 59, 0.10);
+  color: var(--terracotta);
+  display: flex; align-items: center; justify-content: center;
+  animation: booking-float 4.5s ease-in-out infinite;
+}
+.booking-badge svg { width: 22px; height: 22px; }
+/* Minimal floating animation — small, slow, never distracting. */
+@keyframes booking-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .booking-badge { animation: none; }
+}
+
+.booking-steps {
+  display: flex;
+  gap: var(--sp-3);
+  list-style: none;
+  margin: 0; padding: 0;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: var(--sp-2);
+}
+.booking-steps li {
+  display: flex; align-items: center; gap: .5rem;
+  font-size: var(--fs-xs);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--coffee-700);
+  opacity: .45;
+  transition: opacity .3s var(--ease);
+}
+.booking-steps li span {
+  width: 22px; height: 22px; border-radius: 50%;
+  border: 1px solid currentColor;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: .7rem;
+}
+.booking-steps li.is-active { opacity: 1; color: var(--terracotta); }
+.booking-steps li.is-done { opacity: .85; color: var(--coffee); }
+
+.booking-trust-note {
+  display: flex; align-items: flex-start; gap: .5rem;
+  font-size: var(--fs-xs);
+  line-height: 1.6;
+  opacity: .82;
+  margin-top: .3rem;
+}
+.booking-trust-note svg { width: 16px; height: 16px; flex-shrink: 0; margin-top: 1px; color: var(--terracotta); }
+
+.hold-banner {
+  background: linear-gradient(135deg, var(--coffee-900), var(--coffee));
+  color: var(--ivory);
+  border-radius: var(--radius-sm);
+  padding: var(--sp-3);
+}
+.hold-banner-text { display: flex; align-items: baseline; gap: .7rem; margin-bottom: .3rem; }
+.hold-banner-text strong { font-family: var(--font-script); font-size: 1.7rem; color: var(--brass); letter-spacing: .02em; }
+.hold-banner p { font-size: var(--fs-small); opacity: .85; line-height: 1.6; }
+
+.booking-summary {
+  font-size: var(--fs-small);
+  background: var(--cream-100);
+  border-radius: var(--radius-sm);
+  padding: var(--sp-2) var(--sp-3);
+  line-height: 1.8;
+}
+.booking-summary strong { color: var(--coffee); }
+
+.pay-method-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-2);
+}
+.pay-method {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--cream);
+  padding: var(--sp-2);
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+  text-align: left;
+  transition: border-color .3s var(--ease), background .3s var(--ease), transform .3s var(--ease);
+}
+.pay-method-name { font-weight: 700; color: var(--coffee); font-size: var(--fs-small); }
+.pay-method:hover { border-color: var(--terracotta); transform: translateY(-2px); }
+.pay-method.is-selected { border-color: var(--terracotta); background: rgba(166,85,59,0.08); }
+
+.pay-subpanel {
+  background: var(--cream-100);
+  border-radius: var(--radius-sm);
+  padding: var(--sp-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+.bank-details {
+  background: var(--ivory);
+  border: 1px dashed var(--line);
+  border-radius: var(--radius-sm);
+  padding: var(--sp-2) var(--sp-3);
+  font-size: var(--fs-small);
+  line-height: 1.9;
+}
+.bank-details strong { color: var(--coffee); }
+
+.booking-success {
+  text-align: center;
+  align-items: center;
+  padding: var(--sp-4) var(--sp-2);
+}
+.success-check {
+  width: 60px; height: 60px;
+  border-radius: 50%;
+  background: var(--terracotta);
+  color: var(--ivory);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.8rem;
+  margin: 0 auto var(--sp-2);
+  animation: success-pop .5s var(--ease-soft);
+}
+@keyframes success-pop {
+  0% { transform: scale(0.4); opacity: 0; }
+  70% { transform: scale(1.08); opacity: 1; }
+  100% { transform: scale(1); }
+}
+.booking-success h4 { font-family: var(--font-serif); font-size: var(--fs-h3); color: var(--coffee); margin-bottom: .4rem; }
+.booking-success p { max-width: 380px; margin: 0 auto; }
+.booking-success .btn { margin-top: var(--sp-3); }
+
+#confetti-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw; height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Primary submit buttons inside the booking form ("Check Availability &
+   Hold Dates", "Continue to Payment", etc.) run full-width and evenly
+   padded so they read as one deliberate action bar, not a shrink-wrapped
+   pill sitting off to one side. */
+#booking-step-1 > .btn-primary,
+.pay-subpanel > .btn-primary {
+  width: 100%;
+  padding: .95rem 1.5rem;
+  gap: .6rem;
+  margin-top: .2rem;
+}
+
+/* Trim the leftover empty space under the form: the optional-message
+   field and trust note now sit closer together instead of floating in a
+   half-empty lower panel. */
+#booking-step-1 { gap: var(--sp-2); }
+#booking-step-1 textarea { min-height: 64px; }
+.booking-trust-note { margin-top: 0; }
+.booking-widget { padding-bottom: var(--sp-3); }
+
+@media (max-width: 560px) {
+  .pay-method-grid { grid-template-columns: 1fr 1fr; }
+  /* Balanced, centered header instead of a left-stacked icon+title that
+     reads lopsided at narrow widths; the note paragraph stays
+     left-aligned underneath since centered multi-line text is harder
+     to read. */
+  .booking-header { flex-direction: column; align-items: center; text-align: center; }
+  .booking-header > div { width: 100%; }
+  .booking-header .form-note { text-align: left; }
+  /* Trim the widget's own padding so form fields get more room on
+     narrow screens instead of feeling squeezed by .wrap's side padding
+     stacked on top of the card's own padding. */
+  .booking-widget { padding: var(--sp-3); }
+  #booking-step-1 > .btn-primary,
+  .pay-subpanel > .btn-primary { padding: .9rem 1.2rem; font-size: .82rem; }
+}
+
+/* ============ Map embed polish (contact.html) ============ */
+.map-embed { border-radius: var(--radius-md); overflow: hidden; border: var(--card-border); box-shadow: var(--card-shadow-rest); background: var(--ivory); }
+.map-embed-frame { position: relative; width: 100%; aspect-ratio: 16 / 10; }
+.map-embed-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; filter: saturate(0.92); }
+.map-embed-footer { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-2); padding: var(--sp-2) var(--sp-3); flex-wrap: wrap; }
+.map-rating { display:flex; align-items:center; gap:.4rem; font-size: var(--fs-small); margin: 0; color: var(--coffee-700); }
+.map-rating svg { width:16px; height:16px; color:#D9A441; }
+
+@media (max-width: 480px) {
+  .map-embed-frame { aspect-ratio: 4 / 3; }
+}
