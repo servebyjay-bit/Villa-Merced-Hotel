@@ -1,9 +1,6 @@
 {
   "name": "villa-merced-hotel",
   "private": true,
-  "version": "2.0.0",
-  "description": "Villa Merced Hotel — static site + Vercel serverless booking API",
-  "dependencies": {
-    "@vercel/kv": "^1.0.1"
-  }
+  "version": "2.1.0",
+  "description": "Villa Merced Hotel — static site + a free Vercel serverless inquiry endpoint"
 }
