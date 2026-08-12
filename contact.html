@@ -107,27 +107,27 @@
       <form id="inquiry-form" novalidate>
         <div class="form-row">
           <div class="field">
-            <label for="inq-name">Full name</label>
+            <label for="inq-name">Full name <span class="required-mark" aria-hidden="true">*</span></label>
             <input type="text" id="inq-name" name="name" autocomplete="name" required>
           </div>
           <div class="field">
-            <label for="inq-email">Email</label>
+            <label for="inq-email">Email <span class="required-mark" aria-hidden="true">*</span></label>
             <input type="email" id="inq-email" name="email" autocomplete="email" inputmode="email" required>
           </div>
         </div>
         <div class="form-row">
           <div class="field">
-            <label for="inq-checkin">Check-in</label>
+            <label for="inq-checkin">Check-in <span class="required-mark" aria-hidden="true">*</span></label>
             <input type="date" id="inq-checkin" name="checkin" required>
           </div>
           <div class="field">
-            <label for="inq-checkout">Check-out</label>
+            <label for="inq-checkout">Check-out <span class="required-mark" aria-hidden="true">*</span></label>
             <input type="date" id="inq-checkout" name="checkout" required>
           </div>
         </div>
         <div class="form-row">
           <div class="field">
-            <label for="inq-guests">Number of guests</label>
+            <label for="inq-guests">Number of guests <span class="required-mark" aria-hidden="true">*</span></label>
             <input type="number" id="inq-guests" name="guests" min="1" max="3" inputmode="numeric" value="2" required>
           </div>
           <div class="field">
@@ -143,7 +143,10 @@
           <label for="inq-message">Message <span class="text-xs" style="opacity:.6;">(optional)</span></label>
           <textarea id="inq-message" name="message" rows="3" placeholder="Anything we should know about your stay..."></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Send Inquiry</button>
+        <button type="submit" class="btn btn-primary">
+          <svg class="icon-line btn-send-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M21 3 3 10.5l7.5 2.5M21 3l-2.5 18-8-5.5M21 3l-10.5 10"/></svg>
+          <span class="btn-label">Send Inquiry</span>
+        </button>
         <p class="booking-trust-note">
           <svg class="icon-line" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="5" y="10.5" width="14" height="9.5" rx="1.6"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
           Your details are used only to respond to this inquiry and are never shared with third parties or used for marketing without your consent.
@@ -153,6 +156,33 @@
     </div>
   </div>
 </section>
+
+<!-- Confetti canvas — sits above everything, but never intercepts clicks -->
+<canvas id="confetti-canvas" aria-hidden="true"></canvas>
+
+<!-- Inquiry success modal -->
+<div class="success-modal" id="inquiry-success-modal" role="alertdialog" aria-modal="true" aria-labelledby="success-modal-title" hidden>
+  <div class="success-modal-card">
+    <button type="button" class="success-modal-close" id="success-modal-close" aria-label="Close">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+    <span class="success-check" aria-hidden="true">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>
+    </span>
+    <p class="eyebrow" style="justify-content:center; display:flex;">Inquiry Sent</p>
+    <h3 class="script-heading" id="success-modal-title">Thank You<span data-success-name></span>!</h3>
+    <p class="success-modal-message">Your inquiry has been sent to Villa Merced Hotel. Our team will get back to you by email or phone shortly to confirm availability and arrange your downpayment.</p>
+    <div class="success-modal-details" id="success-modal-details"></div>
+    <div class="success-modal-another" id="success-modal-another" hidden>
+      <p class="success-another-label" id="success-another-label">Need to reserve more than one room for your group?</p>
+      <button type="button" class="btn btn-outline-dark success-another-btn" id="success-modal-another-btn">
+        <svg class="icon-line" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M8 3v4M16 3v4M3.5 10h17"/></svg>
+        Send Another Inquiry
+      </button>
+    </div>
+    <button type="button" class="btn btn-primary success-modal-done" id="success-modal-done">Done</button>
+  </div>
+</div>
 </main>
 <footer class="site-footer">
   <div class="wrap">
