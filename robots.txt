@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://villa-merced.hotel/sitemap.xml
+Sitemap: https://villa-merced-hotel.vercel.app/sitemap.xml
