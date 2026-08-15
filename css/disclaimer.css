@@ -1,0 +1,186 @@
+/* ========================================
+   Portfolio/Demo Disclaimer Styling
+   ======================================== */
+
+/* Top banner disclaimer - prominent and professional */
+.site-disclaimer-banner {
+  background: linear-gradient(135deg, #f8f5f0 0%, #f3ede3 100%);
+  border-bottom: 2px solid var(--terracotta, #a57c57);
+  padding: var(--sp-3, 1.5rem) var(--sp-3, 1.5rem);
+  margin-top: -1px;
+  position: relative;
+  z-index: 10;
+}
+
+.site-disclaimer-banner .wrap {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3, 1.5rem);
+  flex-wrap: wrap;
+}
+
+.site-disclaimer-banner-icon {
+  flex-shrink: 0;
+  font-size: 1.5rem;
+}
+
+.site-disclaimer-banner-content {
+  flex: 1;
+  min-width: 200px;
+}
+
+.site-disclaimer-banner-label {
+  font-family: var(--font-body, "Poppins", sans-serif);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--terracotta, #a57c57);
+  margin-bottom: 0.3rem;
+  display: block;
+}
+
+.site-disclaimer-banner-text {
+  font-family: var(--font-body, "Poppins", sans-serif);
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--coffee-700, #3d2817);
+  margin: 0;
+  font-weight: 500;
+}
+
+.site-disclaimer-banner-cta {
+  flex-shrink: 0;
+  display: inline-flex;
+}
+
+.site-disclaimer-banner-cta .btn {
+  font-size: 0.875rem;
+  padding: 0.6rem 1.2rem;
+  white-space: nowrap;
+}
+
+/* Footer disclaimer - smaller, integrated */
+.footer-disclaimer {
+  font-family: var(--font-body, "Poppins", sans-serif);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: rgba(61, 40, 23, 0.75);
+  margin-top: var(--sp-3, 1.5rem);
+  padding-top: var(--sp-3, 1.5rem);
+  border-top: 1px solid rgba(61, 40, 23, 0.15);
+}
+
+.footer-disclaimer p {
+  margin: 0 0 0.5rem 0;
+}
+
+.footer-disclaimer a {
+  color: var(--terracotta, #a57c57);
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.footer-disclaimer a:hover {
+  color: var(--coffee-700, #3d2817);
+  text-decoration: underline;
+}
+
+.footer-disclaimer a:focus-visible {
+  outline: 2px solid var(--terracotta, #a57c57);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Form disclaimer - warning-style but professional */
+.form-disclaimer {
+  background: rgba(165, 124, 87, 0.08);
+  border-left: 4px solid var(--terracotta, #a57c57);
+  padding: var(--sp-2, 1rem);
+  margin-bottom: var(--sp-3, 1.5rem);
+  border-radius: 2px;
+}
+
+.form-disclaimer-title {
+  font-family: var(--font-body, "Poppins", sans-serif);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--terracotta, #a57c57);
+  margin: 0 0 0.4rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.form-disclaimer-text {
+  font-family: var(--font-body, "Poppins", sans-serif);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--coffee-700, #3d2817);
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .site-disclaimer-banner .wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-2, 1rem);
+  }
+
+  .site-disclaimer-banner-text {
+    font-size: 0.9rem;
+  }
+
+  .site-disclaimer-banner-cta {
+    width: 100%;
+  }
+
+  .site-disclaimer-banner-cta .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-disclaimer-banner {
+    padding: var(--sp-2, 1rem) var(--sp-2, 1rem);
+  }
+
+  .site-disclaimer-banner-icon {
+    font-size: 1.25rem;
+  }
+
+  .site-disclaimer-banner-text {
+    font-size: 0.85rem;
+  }
+
+  .site-disclaimer-banner-cta .btn {
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Accessibility - ensure good contrast and no color-only indicators */
+@media (prefers-contrast: more) {
+  .site-disclaimer-banner {
+    border-bottom-width: 3px;
+  }
+
+  .site-disclaimer-banner-text {
+    font-weight: 600;
+  }
+
+  .form-disclaimer {
+    border-left-width: 5px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .site-disclaimer-banner-cta .btn,
+  .footer-disclaimer a {
+    transition: none;
+  }
+}
